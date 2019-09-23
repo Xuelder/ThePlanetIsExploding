@@ -1,0 +1,199 @@
+<tw-storydata name="The Planet Is Exploding" startnode="1" creator="Twine" creator-version="2.2.1" ifid="DBF849A1-875F-4EBC-8BF4-8BDBC81584B1" zoom="1" format="SugarCube" format-version="2.28.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body{
+  background-color: #000000;
+}
+.passage{
+  position:absolute;
+  top: 0;  bottom: 0;  left: 0;  right: 0;
+  width: 80%;
+  height: 80%;
+  margin:auto;
+  font-family: "Courier New", Courier, monospace;
+  /*font-size:3vw;*/
+  color: #e5e5e5;
+  letter-spacing: -0.05em;
+  text-align:center;
+  /*overflow: auto;*/
+}
+
+@media screen and (max-width: 1440px) {
+  body { font-size: 200%; }
+}
+@media screen and (max-width: 1080px) {
+  body { font-size: 150%; }
+}
+@media screen and (max-width: 720px) {
+  body { font-size: 200%; }
+}
+@media screen and (max-width: 480px) {
+  body { font-size: 150%; }
+}
+
+div.ex3 {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#style-ui-bar,#ui-bar').remove();
+
+//Config.saves.autoload = true;
+Config.saves.slots = 1;
+//Config.saves.autosave = true;
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script><tw-passagedata pid="1" name="Title" tags="" position="880,17" size="100,100">&lt;h1&gt;THE PLANET IS EXPLODING!&lt;/h1&gt;&lt;h2&gt;A Global Game Jam 2019 Game&lt;/h2&gt;
+&lt;img src=&quot;https://i.imgur.com/W5ui7eX.gif&quot; width=&quot;100%&quot;/&gt;
+This is a Choice Based &lt;&lt;linkappend &quot;Text Adventure Game&quot;&gt;&gt; -with an animation or two-&lt;&lt;/linkappend&gt;&gt; made in &lt;&lt;linkappend &quot;TWINE&quot;&gt;&gt;(a text adventure game engine)&lt;&lt;/linkappend&gt;&gt;! 
+/*&lt;img src=&quot;https://i.imgur.com/3SjvWH8.png&quot; width=&quot;100%&quot;/&gt;*/
+Click on links to play; links in the &lt;&lt;linkappend &quot;middle&quot;&gt;&gt; -like this-&lt;&lt;/linkappend&gt;&gt; often yields additional expository materials. 
+
+Enough tutorials, [[LET&#39;S PLAY!-&gt;Intro]]
+
+[[Credits]]
+
+</tw-passagedata><tw-passagedata pid="2" name="Intro" tags="" position="881,135" size="100,100">&lt;h1&gt;Wake Up!&lt;/h1&gt;
+You startle as you hear your mother pleads for you to rise from your slumber. 
+There is a steady rumble below you, your colonized planet is shaking itself apart.
+Your Mother tells you what you knew in the back of your head, but it still hurts to hear the news. 
+
+It is &lt;&lt;linkappend &quot;inevitable:&quot;&gt;&gt;
+The planet your colony, your home is on will explode soon, leaving nothing behind.
+&lt;img src=&quot;https://i.imgur.com/fk6mEZC.gif&quot; width=&quot;100%&quot;/&gt;
+&lt;&lt;/linkappend&gt;&gt;  
+
+The emergency evacuation protocol is &lt;&lt;linkappend &quot;active,&quot;&gt;&gt;(T-Minus two minutes till emergency teleport!)&lt;&lt;/linkappend&gt;&gt; and your home will soon be gone.
+
+You can only take &lt;&lt;linkreplace &quot;three&quot;&gt;&gt;three -yes, just three-&lt;&lt;/linkreplace&gt;&gt; of your worldly possessions.
+
+You have &lt;&lt;linkreplace &quot;two minutes&quot;&gt;&gt;a short time, I know, but only two minutes, time is precious on this swiftly exploding planet&lt;&lt;/linkreplace&gt;&gt;.
+
+You can never come back.&lt;&lt;set $seconds to 120&gt;&gt;&lt;&lt;set $inventory to []&gt;&gt;
+
+[[Look around your bedroom|Bedroom]]</tw-passagedata><tw-passagedata pid="3" name="Credits" tags="" position="653,103" size="100,100">(Insert General Author Credits Here)
+
+&lt;&lt;back &quot;Go Back.&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Timer" tags="" position="1106,101" size="100,100">&lt;span id=&quot;countdown&quot;&gt;The world will end in $seconds seconds.&lt;/span&gt;
+&lt;&lt;silently&gt;&gt;
+    &lt;&lt;repeat 1s&gt;&gt;
+        &lt;&lt;set $seconds to $seconds - 1&gt;&gt;
+        &lt;&lt;if $seconds gt 0&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;The world will end in $seconds seconds.&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;replace &quot;#countdown&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;goto &quot;World End&quot;&gt;&gt;
+            &lt;&lt;stop&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+		&lt;&lt;if $inventory.length is 3&gt;&gt;
+			&lt;&lt;replace &quot;#countdown&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;goto &quot;World End&quot;&gt;&gt;
+            &lt;&lt;stop&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Bedroom" tags="" position="871,311" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+&lt;img src=&quot;https://i.imgur.com/5xeBuHF.gif&quot; width=&quot;100%&quot;/&gt;
+
+You take stock of your bedroom and frantically search around for your worldly possessions:
+
+[[Photo Album]]
+[[Game Console]]
+[[Diploma]]
+[[Painting]]
+[[Stuffed Bear]]
+[[Lucky Jacket]]
+[[Walking Stick]]
+[[Hunting Knife]]
+[[Sketchbook]]
+[[Tablet]]
+
+</tw-passagedata><tw-passagedata pid="6" name="World End" tags="autosave" position="520,220" size="100,100">You leave with what you gathered as your home is destroyed.
+
+&lt;img src=&quot;https://i.imgur.com/KcPuB2T.gif&quot; width=&quot;100%&quot;/&gt;
+
+You took with you:
+
+&lt;&lt;= $inventory.join(&#39;, &#39;)&gt;&gt;
+
+Hopefully, this is what meant most to you about your home, because you can never go back.
+
+[[Credits]]
+</tw-passagedata><tw-passagedata pid="7" name="Photo Album" tags="" position="231,661" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+The Photo Album contains the many pictures you took with your holocamera of your colony&#39;s settlement. The &lt;&lt;linkappend &quot;leather cover&quot;&gt;&gt; -a truly rare commodity here on the colony-&lt;&lt;/linkappend&gt;&gt; hides the digital complexity of the many screens inside displaying the holographic pictures you and your parents took. Within it contains the memories of you and your parents lives here on the colony frozen in time.  
+
+Flipping through you see the many pictures you took throughout the short time you have spent at the colony. You skim over the photos your parents took of &lt;&lt;linkappend &quot;first landing&quot;&gt;&gt; -the untamed wilderness disturbed by the coming landing craft-&lt;&lt;/linkappend&gt;&gt;, the survey of where you first laid down your claim for the &lt;&lt;linkappend &quot;house&quot;&gt;&gt; -next to that pristine lake, beautiful where you caught your first fish-&lt;&lt;/linkappend&gt;&gt; you and your parents built here. You see the group photo of the &lt;&lt;linkappend &quot;first school day&quot;&gt;&gt; -where you finally made your first friends-&lt;&lt;/linkappend&gt;&gt; here on the colony, and the day of the first &lt;&lt;linkappend &quot;harvest festival&quot;&gt;&gt; -though not as great as last years, where you had your first kiss-&lt;&lt;/linkappend&gt;&gt;. 
+
+&lt;&lt;link [[Take the Photo Album|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Photo Album&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="8" name="Game Console" tags="" position="341,579" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+A game console is nestled in its charging station, clearly there from the previous night&#39;s gaming session. This console has been used to connect you in play to all your &lt;&lt;linkappend &quot;friends&quot;&gt;&gt; -connected all over the southern continent, separated by miles of hill country-&lt;&lt;/linkappend&gt;&gt; across the colony; playing shooters and MMOs with them has kept you and your friends up in endless nights.
+
+Next to it is its case, with cartridges for games like &lt;&lt;linkappend &quot;Siege of the Ancients&quot;&gt;&gt; -the Sword and Sorcery styled MOBA that you have spent way too many nights you should have studied on playing-&lt;&lt;/linkappend&gt;&gt;, &lt;&lt;linkappend &quot;Bedlam Legion&quot;&gt;&gt; -a shooter that was essential to relieve your stress on certain nights after exams-&lt;&lt;/linkappend&gt;&gt;, and &lt;&lt;linkappend &quot;Monster Slayers United&quot;&gt;&gt; -although not a cooperative game, this crazy hack and slash was the most fun you had playing games-&lt;&lt;/linkappend&gt;&gt;. You had so much fun playing these with your friends.
+
+&lt;&lt;link [[Take the Game Console|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Game Console&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="9" name="Diploma" tags="" position="487,521" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+Your Diploma hangs on the wall. The frame is a deep stained oak made custom by your father, who used a thicker branch from one of the first &lt;&lt;linkappend &quot;oak trees&quot;&gt;&gt; -planted to celebrate the successful settlement-&lt;&lt;/linkappend&gt;&gt; to be planted on the colony as the material to frame it.
+
+You worked hard on graduating from &lt;&lt;linkappend &quot;school&quot;&gt;&gt; -built to accommodate the settlers&#39; need for long term colonization and nation building-&lt;&lt;/linkappend&gt;&gt;, becoming &lt;&lt;linkappend &quot;salutatorian&quot;&gt;&gt; -you could have been valedictorian, but you probably wouldn&#39;t have been the best Bedlam Legion player on the colony if you did-&lt;&lt;/linkappend&gt;&gt; of your class. You were in the second full graduating class of the colony schools, from 1st grade to your just recently ended senior year. This diploma is proof of your long nights studying to &lt;&lt;linkappend &quot;improve yourself&quot;&gt;&gt; -when you weren&#39;t playing video games or exploring and sketching the surrounding countryside-&lt;&lt;/linkappend&gt;&gt;.
+
+&lt;&lt;link [[Take the Diploma|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Diploma&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="10" name="Painting" tags="" position="631,445" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+This is a Painting you made for your &lt;&lt;linkappend &quot;freshman year art elective&quot;&gt;&gt; -where you discovered your love of art-&lt;&lt;/linkappend&gt;&gt;. Although &lt;&lt;linkappend &quot;amateurish&quot;&gt;&gt; -it was your first painting after all-&lt;&lt;/linkappend&gt;&gt;, the landscape with your home in the background evokes your vision of an idealistic portrait of your home.
+
+The &lt;&lt;linkappend &quot;serene environment&quot;&gt;&gt;, where you played your youth, running around giving your parent&#39;s hell&lt;&lt;/linkappend&gt;&gt; hides the then unknown coming disaster that is currently plaguing you at this very moment. The &lt;&lt;linkappend &quot;twin moons&quot;&gt;&gt; -Red Apollo and White Gold Artemis-&lt;&lt;/linkappend&gt;&gt; shining down on the serene &lt;&lt;linkappend &quot;lake&quot;&gt;&gt; -where you swam many summer nights-&lt;&lt;/linkappend&gt;&gt; next to the house. The rolling hills in the background are shadowed in the subtle moonlight.
+
+&lt;&lt;link [[Take the Painting|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Painting&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="11" name="Stuffed Bear" tags="" position="751,415" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+Your &lt;&lt;linkappend &quot;Stuffed Bear&quot;&gt;&gt; -MR. BEARINGTON!-&lt;&lt;/linkappend&gt;&gt; was the only luxury you brought from the homeworld when you left at just &lt;&lt;linkappend &quot;four years old&quot;&gt;&gt; -you can barely remember this, let alone the homeworld-&lt;&lt;/linkappend&gt;&gt;. Mr. Bearington has been your constant companion for over fifteen years ever since you received him on your third birthday.
+
+He has been &lt;&lt;linkappend &quot;restuffed&quot;&gt;&gt; -after that dog got to him-&lt;&lt;/linkappend&gt;&gt;, &lt;&lt;linkappend &quot;sewed back together&quot;&gt;&gt; meticulously by your mother&lt;&lt;/linkappend&gt;&gt;, even survived the unfortunate washing that your Dad gave him after he poured that mustard all over Mr. Bearington by &lt;&lt;linkappend &quot;accident&quot;&gt;&gt; -you may forgive him one day-&lt;&lt;/linkappend&gt;&gt;. Often, this stuffed bear has been your witness to many childhood escapades.
+
+&lt;&lt;link [[Take the Stuffed Bear|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Stuffed Bear&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="12" name="Lucky Jacket" tags="" position="1009,419" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+Hanging over the back of your chair is what you have declared your &lt;&lt;linkappend &quot;Lucky Jacket&quot;&gt;&gt; -it seems that bad situations just seem to resolve themselves when you wear it-&lt;&lt;/linkappend&gt;&gt;. A military style pea coat, this once &lt;&lt;linkappend &quot;oversized jacket&quot;&gt;&gt; which your mother had insisted you would grow into&lt;&lt;/linkappend&gt;&gt; has been keeping you warm while you go on your exploration of the uncolonized wilderness for the last three years.  
+
+It has been well taken care of, even though your Lucky Jacket has been through &lt;&lt;linkappend &quot;a lot&quot;&gt;&gt;, especially considering what kind of critters live in this alien planet&#39;s wilderness&lt;&lt;/linkappend&gt;&gt;. The only example of any damage was a recently placed patch where your current bandage is on your &lt;&lt;linkappend &quot;arm&quot;&gt;&gt; -a story for another day-&lt;&lt;/linkappend&gt;&gt;.
+
+&lt;&lt;link [[Take the Lucky Jacket|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Lucky Jacket&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="13" name="Walking Stick" tags="" position="1139,491" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+Tucked in the corner is a &lt;&lt;linkappend &quot;carved&quot;&gt;&gt; -you insisted on doing it yourself instead of having one 3D Printed-&lt;&lt;/linkappend&gt;&gt; Walking Stick. More of a &lt;&lt;linkappend &quot;staff than a cane&quot;&gt;&gt; which suited your exploratory nature&lt;&lt;/linkappend&gt;&gt;, you carved this Walking Stick by hand from a piece of driftwood you found at the lake by your home. Although &lt;&lt;linkappend &quot;crude&quot;&gt;&gt; -only your first foray into wood carving-&lt;&lt;/linkappend&gt;&gt;, you feel very proud of the designs on it.
+
+You used this Walking Stick for your many exploration &lt;&lt;linkappend &quot;&#39;missions&#39;&quot;&gt;&gt; as you would tell your friends and family&lt;&lt;/linkappend&gt;&gt; around the colony. The rough, hilly terrain around the colony was nice for protection, but made for tedious, and sometimes &lt;&lt;linkappend &quot;dangerous&quot;&gt;&gt; -as the bandage on your arm could attest to-&lt;&lt;/linkappend&gt;&gt; exploration.
+
+&lt;&lt;link [[Take the Walking Stick|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Walking Stick&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="14" name="Hunting Knife" tags="" position="1265,571" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+On the corner of your desk is your Hunting Knife tucked inside its sheath. Simplistic, and &lt;&lt;linkappend &quot;slightly long&quot;&gt;&gt; but not quite a machete&lt;&lt;/linkappend&gt;&gt;, you keep it well oiled for constant use when you are outside of the colony&#39;s perimeter. 3D printed with your father on your thirteenth birthday, he took you on your first hunt for &lt;&lt;linkappend &quot;game&quot;&gt;&gt; it was for the fall feast, and though easier to grow the meat, it was a tradition among your household&lt;&lt;/linkappend&gt;&gt;. 
+
+It was this knife that you used to cut through thick brush when you went &lt;&lt;linkappend &quot;exploring&quot;&gt;&gt; the thick untamed forest just beyond the walls&lt;&lt;/linkappend&gt;&gt;. However, your knife was made more for carving and gutting the game you &lt;&lt;linkappend &quot;hunted&quot;&gt;&gt; so your family could have fresh meat on special occasions&lt;&lt;/linkappend&gt;&gt; than for chopping brush. On your last hunt, it was this knife that allowed you to survive what you thought was going to be the greatest threat to you your &lt;&lt;linkappend &quot;entire life&quot;&gt;&gt; -funny how little that threat seems now-&lt;&lt;/linkappend&gt;&gt;.
+
+&lt;&lt;link [[Take the Hunting Knife|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Hunting Knife&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="15" name="Sketchbook" tags="" position="1395,659" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+Open to about the &lt;&lt;linkappend &quot;third or fourth page from the end&quot;&gt;&gt; as suits a prolific amatuer artist such as yourself&lt;&lt;/linkappend&gt;&gt;, your Sketchbook is a testament to your exploration of the surrounding countryside of the colony. A decent chunk of the sketchbook was drawn in the last two years, as you explored beyond the rocky hills surrounding &lt;&lt;linkappend &quot;the colony&quot;&gt;&gt; where it was relatively tamed and industrialized&lt;&lt;/linkappend&gt;&gt;.
+
+Most sketches are in charcoal, as you seem to have a certain talent towards, or perhaps that is just the easiest kind of physical art material you have available. You spent most of your exploration of the colony outskirts looking for &lt;&lt;linkappend &quot;different places&quot;&gt;&gt; -places that will soon disappear-&lt;&lt;/linkappend&gt;&gt; to immortalize in your artistic vision. 
+
+&lt;&lt;link [[Take the Sketchbook|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Sketchbook&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata><tw-passagedata pid="16" name="Tablet" tags="" position="1525,717" size="100,100">&lt;&lt;include &quot;Timer&quot;&gt;&gt;
+
+Your Tablet lays next to your bed, still open on the messaging app with your &lt;&lt;linkappend &quot;friends&quot;&gt;&gt; (will you be able to stay in communication with them after evac?)&lt;&lt;/linkappend&gt;&gt;. Most of your contacts, your correspondence, and your &lt;&lt;linkappend &quot;personal journal&quot;&gt;&gt;your complete self written history&lt;&lt;/linkappend&gt;&gt; are all on your mobile computer. 
+
+Building a network with your friends at school was realistically why you used this tablet. However, it also has all your notes, your textbooks, and &lt;&lt;linkappend &quot;backups&quot;&gt;&gt; -well isn&#39;t that ironic-&lt;&lt;/linkappend&gt;&gt; of all your photos and digital sketches.
+
+&lt;&lt;link [[Take the Tablet|Bedroom]]&gt;&gt;&lt;&lt;set $inventory to $inventory.concatUnique(&quot;Tablet&quot;)&gt;&gt;&lt;&lt;/link&gt;&gt; OR [[Go Back|Bedroom]]?</tw-passagedata></tw-storydata>
